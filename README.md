@@ -1,3 +1,5 @@
+this is a playground to understand how a webservice work.
+
 ```json
 {
     "data": "mixed contiene la respuesta",
@@ -77,3 +79,15 @@ if a device with the given identifier already exist, the existing device will be
 
 - `404 Not Fpund` if teh device does not exist
 - `204  No content` no usefull data to return
+
+# PyJWT
+
+with the intention of using a web autentication service i choose JWT, in python there is a library call PyJWT. We just make use of it.
+
+# MySql
+
+for use of my sql we use mysql-connector which allow use to use MySql commands from python.
+
+
+# TODO
+* integrate everything.
