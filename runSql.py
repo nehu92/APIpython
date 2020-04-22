@@ -5,7 +5,7 @@ import mysql.connector as mysql
 db = mysql.connect( 
     host = "localhost",
     user = "root",
-    passwd = "peronchodel50",
+    passwd = "peronismo",
     database = "mydb"
 )
 
@@ -16,4 +16,4 @@ tables = cursor.fetchall() ## it returns list of tables present in the database
 
 ## showing all the tables one by one
 for table in tables:
-    print(type(table))
+    print(table)
