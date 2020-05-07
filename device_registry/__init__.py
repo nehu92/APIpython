@@ -41,9 +41,24 @@ class DeviceList(Resource):
     def post(self):
 
         parser = reqparse.RequestParser()
-        print(request.json)
-        parser.add_argument('identifier', required=True, help='este dato es obligatorio')
-        parser.add_argument('timeStamp', required=True)
+       # print(request.json)
+
+        #print for debug
+        
+        req_data = {}
+        #req_data['uuid'] = uuid
+        req_data['endpoint'] = request.endpoint
+        req_data['method'] = request.method
+        req_data['cookies'] = request.cookies
+        req_data['data'] = request.data
+        req_data['headers'] = dict(request.headers)
+        req_data['headers'].pop('Cookie', None)
+        req_data['args'] = request.args
+        req_data['form'] = request.form
+        req_data['remote_addr'] = request.remote_addr
+        print (req_data)
+        parser.add_argument('identifier')
+        parser.add_argument('timeStamp')
         parser.add_argument('ECU')
         parser.add_argument('acelerometer')
         parser.add_argument('GPS')
