@@ -2,7 +2,7 @@ from flask import Flask, g
 import markdown
 import os
 import shelve
-from flask_restful import Resource, Api, reqparse
+from flask_restful import Resource, Api, reqparse, request
 import csv
 #creo la instancia de Flask
 app = Flask(__name__)
@@ -41,7 +41,7 @@ class DeviceList(Resource):
     def post(self):
 
         parser = reqparse.RequestParser()
-
+        print(request.json)
         parser.add_argument('identifier', required=True, help='este dato es obligatorio')
         parser.add_argument('timeStamp', required=True)
         parser.add_argument('ECU')
@@ -61,6 +61,6 @@ class DeviceList(Resource):
             w.writerow(args)
             
 
-        return {'message': 'Device registered', 'data': args}, 201
+        return {'message': 'data Recieve'}, 201
 
 api.add_resource(DeviceList, '/data')
