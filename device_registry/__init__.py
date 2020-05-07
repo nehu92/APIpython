@@ -85,9 +85,14 @@ class DeviceList(Resource):
         print(args['GPS'])
         
         with open("dump.csv", "a") as pepe:
+            csvFile = csv.writer(pepe, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            csvFile.writerow([args['identifier'], args['timeStamp'], args['ECU'], args['acelerometer'], args['GPS']])
+
+
+            '''
             w = csv.DictWriter(pepe, args.keys())
             w.writerow(args)
-            
+            '''
 
         return {'message': 'data Recieve'}, 201
 
