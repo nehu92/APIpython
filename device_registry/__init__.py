@@ -73,6 +73,17 @@ class DeviceList(Resource):
         '''
         print('\r\n')
         print(args.keys())
+        print("identifier")
+        print(args['timeStamp'])
+        print("timeStamp")
+        print(args['timeStamp'])
+        print("ECU")
+        print(args['ECU'])
+        print("acelerometer")
+        print(args['acelerometer'])
+        print("GPS")
+        print(args['GPS'])
+        
         with open("dump.csv", "a") as pepe:
             w = csv.DictWriter(pepe, args.keys())
             w.writerow(args)
