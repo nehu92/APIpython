@@ -71,6 +71,8 @@ class DeviceList(Resource):
         print(shelf)
         shelf[args['identifier']] = args
         '''
+        print('\r\n')
+        print(args.keys())
         with open("dump.csv", "a") as pepe:
             w = csv.DictWriter(pepe, args.keys())
             w.writerow(args)
